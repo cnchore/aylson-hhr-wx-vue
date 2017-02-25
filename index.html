@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="description" content="">
+    <meta name="author" content="Weiyang.Qiu">
+    <title>艾臣合伙人</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/weui.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <style type="text/css">
+    	
+    	/* 跳转页面动画 */
+    	.slide-enter,
+    	.slide_back-enter {
+    		position: absolute;
+    		width: 100%;
+    	}
+    	.slide-leave,
+    	.slide_back-leave {
+    		position: absolute;
+    		width: 100%;
+    	}
+    	.slide-enter-active,
+    	.slide_back-enter-active {
+    		transition: all 0.3s linear;
+    	}
+    	.slide-leave-active {
+    		position: absolute;
+    		transition: all 0.3s linear;
+    		transform: translate(-100%);
+    	}
+    	.slide-enter{
+    		transform: translateX(100%);
+    	}
+    	.slide_back-leave-active {
+    		position: absolute;
+    		transition: all 0.3s linear;
+    		transform: translate(100%);
+    	}
+    	.slide_back-enter {
+    		transform: translateX(-100%);
+    	}
+    </style>
+  </head>
+  <body>
+    <div id="app">
+    	<transition :name="transitionName">
+    		<router-view></router-view>
+    	</transition>
+    </div>
+
+  </body>
+<script type="text/javascript" src="../static/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+       
+        (function(){
+            function resizeApp(){
+
+                if($('#app').height()<$(window).height()){
+                    $('#app').css('min-height',$(window).height());
+                }
+                
+            }
+            resizeApp();
+            window.addEventListener("resize", resizeApp, false);
+       
+        })();
+      
+</script>
+</html>
