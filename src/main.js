@@ -5,7 +5,7 @@ import router from './router'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-//https://sjs.aylsonclub.com/service
+
 
 const serverPath='http://test.aylsonclub.com/partner';
 const store = new Vuex.Store({
